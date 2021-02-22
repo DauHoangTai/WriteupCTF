@@ -11,4 +11,5 @@ Please check it carefully
 ```
 ### Solution
 - Enter `?url` by any parameters. it render my ouput => `ssti` and i can see domain with `ssti` lmaoo :)
-- it have a blacklist, i find list black list ```config, request, _```
+- it have a blacklist, i find list black list ```config, request, __, [], join```
+- bypass `_` => 
