@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+*, ::after, ::before {
+    box-sizing: border-box
+}
+
+body {
+    background-color: #141d2b;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding: 1.5rem 2rem;
+}
+
+h1#title {
+    padding-bottom: 30px;
+}
+
+img {
+    filter: grayscale(1);
+}
+
+main {
+    width: 1200px;
+    max-width: 96%;
+    margin: 0 auto
+}
+
+main header {
+    text-align: center;
+    margin: 25px 0
+}
+
+button:focus { 
+    outline:0 !important
+  }
+
+.row {
+    flex-wrap: wrap;
+    margin-right: -45px;
+    margin-left: -45px
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+}
+
+.card {
+    background-color: #1e2530;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 135px;
+    overflow: hidden;
+    padding: .5em 1em;
+    width: 280px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    margin: 15px auto;
+    position: relative
+}
+
+.card:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, .35)
+}
+
+.card-title {
+    padding-left: 17px;
+    font-size: 17px
+}
+
+.card-data, .card-sub {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    margin-top: 22px;
+}
+
+.card-data {
+    width: 100%;
+    height: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between
+}
+
+p.data {
+    font-size: 35px;
+    margin-left: 10px
+}
+
+p.counts {
+    padding-top: 27px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+#description {
+    margin-top: 80px;
+    margin-bottom: -30px;
+}
+
+.card-sub {
+    color: #9096b4;
+    margin: 5px
+}
+
+.card-nginx {
+    border-top: 5px solid #E040FB;
+}
