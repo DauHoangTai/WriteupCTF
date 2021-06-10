@@ -10,7 +10,7 @@ const app = express()
 // Middlewares //
 app.use(bodyParser.json())
 app.use(basicAuth({
-    users: { "admin": process.env.SECRET || "admin" },
+    users: { "admin": "admin" || "admin" },
     challenge: true
 }))
 
