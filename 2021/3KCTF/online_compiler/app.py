@@ -27,7 +27,7 @@ def save():
         code=request.form['code']
         if (len(code)<100):
             filename=get_random_string(6)+'.php'
-            path='/home/app/test/'+filename
+            path='/home/ubuntu/t'+filename
             f=open(path,'w')
             f.write(code)
             f.close()
