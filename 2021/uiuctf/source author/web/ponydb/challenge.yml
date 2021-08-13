@@ -1,0 +1,27 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "ponydb"
+author: "kmh"
+category: web
+description: |-
+  http://ponydb.chal.uiuc.tf
+
+  **author**: kmh
+value: 500
+type: dynamic
+tags:
+  - web
+extra:
+  initial: 500
+  decay: 75
+  minimum: 50
+flags:
+  - uiuctf{My_l33tle_p0ny_5fb234}
+files:
+  - handout.tar.gz
+# This is visible by default. It takes two values: hidden, visible.
+state: visible
+# leave this 0.1
+version: "0.1"

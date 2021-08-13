@@ -1,0 +1,18 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: wasmcloud
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        port: 80
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+    image: us.gcr.io/dotted-forest-314903/wasmcloud-healthcheck:f64b1d9dc28cff659205b4aeb5acf35a1da09f24ba9945e28979b7e6c143865b
+  image: us.gcr.io/dotted-forest-314903/wasmcloud-challenge:2cc34c2c38aa6709ca924c46dc81f5dfe5b46e3eafbe61df001db3923e4b399f

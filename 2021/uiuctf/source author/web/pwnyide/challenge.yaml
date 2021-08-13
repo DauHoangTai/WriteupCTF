@@ -1,0 +1,18 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: pwnyide
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        port: 80
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+    image: us.gcr.io/dotted-forest-314903/pwnyide-healthcheck:cf6ac9390a1a4fb545af5c399ecd379e1691d0fea634d2a04ecbcf8a016bb5bd
+  image: us.gcr.io/dotted-forest-314903/pwnyide-challenge:10e2ebdc9020138fb9c740e4f3a69da5078d5e19c18a312d58af25e72aec707c

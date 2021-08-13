@@ -1,0 +1,35 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: essveegee
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        port: 80
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+    image: us.gcr.io/dotted-forest-314903/essveegee-healthcheck:05ebbbee8031e6d2a31c23d281493c66bfcf5f7876be986cbf8d596979eb6219
+  # persistentVolumeClaims:
+  # - name: essveegee
+  #   size: 4Gi
+  # podTemplate:
+  #   containers:
+  #   - name: challenge
+  #     volumeMounts:
+  #     - name: gcsfuse
+  #       subPath: sessions # this this a folder inside volume
+  #       mountPath: /mnt/disks/sessions
+  #     - name: gcsfuse
+  #       subPath: uploads
+  #       mountPath: /mnt/disks/uploads
+  #   volumes:
+  #   - name: gcsfuse
+  #     persistentVolumeClaim:
+  #       claimName: $PUT_THE_NAME_OF_THE_CHALLENGE_HERE
+  image: us.gcr.io/dotted-forest-314903/essveegee-challenge:c77f38c768611fdd386e368fb9557e358d4468025dac7ca9893bfd99acf7cb09

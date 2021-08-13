@@ -1,0 +1,34 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: ponydb
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        port: 80
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+    image: us.gcr.io/dotted-forest-314903/ponydb-healthcheck:f18a9ee7b1f029a2d630e985001a47b838693b2b34df406e7aef0d2f0f26a012
+  podTemplate:
+    template:
+      spec:
+        containers:
+          - name: challenge
+          - name: mysql
+            image: mysql
+            env:
+              - name: MYSQL_DATABASE
+                value: ponies
+              - name: MYSQL_USER
+                value: iheartponies
+              - name: MYSQL_PASSWORD
+                value: 5a21f99b09ea1608f9419d717421410a
+              - name: MYSQL_RANDOM_ROOT_PASSWORD
+                value: "1"
+  image: us.gcr.io/dotted-forest-314903/ponydb-challenge:1baa488340d19f84e6e7bd7113e12606a7fda9087350a2c719526e6640da88c3

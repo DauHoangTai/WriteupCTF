@@ -1,0 +1,18 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: wasmbaby
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        port: 80
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+    image: us.gcr.io/dotted-forest-314903/wasmbaby-healthcheck:758c60ce245d0374cba000fa159b1b4dc83186e2bd034442223536e34e414eb6
+  image: us.gcr.io/dotted-forest-314903/wasmbaby-challenge:45263f46b89ef81ae6f417c070ec7c2a7b07b48a68faf0fa661946ae1f1e7d4b

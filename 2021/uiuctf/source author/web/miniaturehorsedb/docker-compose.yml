@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: ponies
+      MYSQL_USER: iheartponies
+      MYSQL_PASSWORD: wv38f8hnDb1IThTw6A
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+  ponydb:
+    privileged: true
+    build: ./challenge
+    environment:
+      FLAG: uiuctf{wh0ops_th1s_on3_was_harder_r1ght_9fa2b}
+      DB: ponies
+      DB_HOST: db
+      DB_USER: iheartponies
+      DB_PASS: wv38f8hnDb1IThTw6A
+      SECRET_KEY: uSsV465Looe1P8
+    ports:
+      - 1337:1337

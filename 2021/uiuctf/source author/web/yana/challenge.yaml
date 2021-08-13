@@ -1,0 +1,22 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: yana-bot
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+    image: us.gcr.io/dotted-forest-314903/yana-bot-healthcheck:beb7e254cdb4b8629742076731494db4ade0b752c887422ab19309bd7bdf318c
+  # You can allow the bot to connect to other challenges internally.
+  # This can be useful during testing so that you don't have to make your
+  # challenge public.
+  # The challenge will be reachable at $name.default.svc.cluster.local or
+  # simply at $name with the default k8s search list.
+  #allowConnectTo:
+  #  - otherchallenge
+
+  image: us.gcr.io/dotted-forest-314903/yana-bot-challenge:e8c4262010482f0225a07babba02eb78e9d9f5fcf39fc32d5488ffb52d9e8590

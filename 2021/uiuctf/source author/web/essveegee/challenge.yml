@@ -1,0 +1,27 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "essveegee"
+author: "arxenix"
+category: web
+description: |-
+  I made an [SVG converting service](http://essveegee.chal.uiuc.tf). It's flawless.
+
+  **author**: arxenix
+value: 500
+type: dynamic
+tags:
+  - web
+extra:
+  initial: 500
+  decay: 75
+  minimum: 50
+flags:
+  - uiuctf{i_R3al1y_h0p3_u_d0nt_c0Nv3rt_sVgs_l1k3_th1S}
+files:
+  - handout.tar.gz
+# This is visible by default. It takes two values: hidden, visible.
+state: visible
+# leave this 0.1
+version: "0.1"

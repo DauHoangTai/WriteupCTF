@@ -1,0 +1,34 @@
+apiVersion: kctf.dev/v1
+kind: Challenge
+metadata:
+  name: miniaturehorsedb
+spec:
+  deployed: true
+  powDifficultySeconds: 0
+  network:
+    public: true
+    ports:
+      - protocol: "TCP"
+        port: 80
+        targetPort: 1337
+  healthcheck:
+    # TIP: disable the healthcheck during development
+    enabled: true
+    image: us.gcr.io/dotted-forest-314903/miniaturehorsedb-healthcheck:f18a9ee7b1f029a2d630e985001a47b838693b2b34df406e7aef0d2f0f26a012
+  podTemplate:
+    template:
+      spec:
+        containers:
+          - name: challenge
+          - name: mysql
+            image: mysql
+            env:
+              - name: MYSQL_DATABASE
+                value: ponies
+              - name: MYSQL_USER
+                value: iheartponies
+              - name: MYSQL_PASSWORD
+                value: 224beabe72313014d9a8fe9ab84e0b75
+              - name: MYSQL_RANDOM_ROOT_PASSWORD
+                value: "1"
+  image: us.gcr.io/dotted-forest-314903/miniaturehorsedb-challenge:19b3f34377dde070819a34a66bfd3de8ac33e51b5da6601fd21ae37816ced1df

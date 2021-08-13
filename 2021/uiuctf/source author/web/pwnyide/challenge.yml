@@ -1,0 +1,27 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "pwnyIDE"
+author: "arxenix"
+category: web
+description: |-
+  We've created the greatest web IDE of all time, take a look [here](http://pwnyide.chal.uiuc.tf)
+
+  **author**: arxenix
+value: 500
+type: dynamic
+tags:
+  - web
+extra:
+  initial: 500
+  decay: 75
+  minimum: 50
+flags:
+  - uiuctf{i_h0P3_th4t_waS_a_fUn_ch4In_75d997b}
+files:
+  - handout.tar.gz
+# This is visible by default. It takes two values: hidden, visible.
+state: visible
+# leave this 0.1
+version: "0.1"

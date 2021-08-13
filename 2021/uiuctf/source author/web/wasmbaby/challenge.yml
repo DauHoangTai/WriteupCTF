@@ -1,0 +1,21 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+# Required sections
+name: wasmbaby
+author: ian5v
+category: web
+description: "wasm's a cool new technology! \nhttp://wasmbaby.chal.uiuc.tf\n\n\n**author**: ian5v"
+value: 500
+type: dynamic
+tags:
+  - web
+  - beginner
+extra:
+  initial: 500
+  decay: 75
+  minimum: 50
+flags:
+  - uiuctf{welcome_to_wasm_e3c3bdd1}
+# This is visible by default. It takes two values: hidden, visible.
+state: visible
+version: "0.1"

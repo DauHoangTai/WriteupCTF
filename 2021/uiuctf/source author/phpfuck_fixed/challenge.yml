@@ -1,0 +1,28 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "phpfuck_fixed"
+author: "arxenix"
+category: jail
+description: |-
+  i really really hate php... 
+  
+  http://phpfuck-fixed.chal.uiuc.tf
+  
+  **author**: arxenix
+value: 500
+type: dynamic
+tags:
+  - jail
+  - php
+extra:
+  initial: 500
+  decay: 75
+  minimum: 50
+flags:
+  - uiuctf{pl3as3_n0_m0rE_pHpee_9f4e3058}
+# This is visible by default. It takes two values: hidden, visible.
+state: visible
+# leave this 0.1
+version: "0.1"
