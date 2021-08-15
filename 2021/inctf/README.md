@@ -1,0 +1,1 @@
+Detail writeup : https://dauhoangtai.github.io/ctf/2021/08/16/WRITEUP-INCTF-2021-WEB.html
