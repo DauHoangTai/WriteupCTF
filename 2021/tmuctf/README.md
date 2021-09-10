@@ -55,7 +55,7 @@ Pill: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MT
 Flag -> `TMUCTF{0h_51nn3rm4n_Wh3r3_Y0u_60nn4_Run_70?}`
 
 ## Challenge Injection
-filter: `_ [] . request popen mro config " os` and space
+filter: `_ [] . request popen mro config " os self shell % ; + join` and space
 
 Bypass filter by unicode
 
