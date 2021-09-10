@@ -1,15 +1,15 @@
 ## Challenge Login
-Step 1: /robots.txt -> get source.
+Step 1: /robots.txt -> get source
 
-Step 2: input password = `0e1137126905` (payload).
+Step 2: input password = `0e1137126905` (payload)
 
 Flag -> `TMUCTF{D0_y0u_kn0w_7h3_d1ff3r3nc3_b37w33n_L0053_c0mp4r150n_4nd_57r1c7_c0mp4r150n_1n_PHP!?}`
 
 ## Challenge The Devil Never Sleeps
 
-Step 1: `/sleepingpill` -> get jwt and public key.
+Step 1: `/sleepingpill` -> get jwt and public key
 
-Step 2: format public key.
+Step 2: format public key
 File `key.pub`
 ```
 -----BEGIN PUBLIC KEY-----
@@ -19,7 +19,8 @@ MIGsMA0GCSqGSIb3DQEBAQUAA4GaADCBlgKBjgD/////////////////////////
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAwEAAQ==
 -----END PUBLIC KEY-----
 ```
-Step 3: Use RsaCtfTool to gen private key.
+Step 3: Use RsaCtfTool to gen private key
+
 `./RsaCtfTool.py --publickey ./key.pub --private`
 
 Private key
@@ -41,7 +42,8 @@ qlVVqqpVVaqqVVWqqlVVqqkCQRCEIQhCEIQhCEIQQhCEIQhCEIQhCEEIQhCEIQhC
 EIQhBCEIQhCEIQhCEIQQhCEIQhCEIQhCEEIQhCEIQhCEIQhB
 -----END RSA PRIVATE KEY-----
 ```
-Step 4: Use jwt.io set `exp": 9999999999` and `"sleep": "true"`.
+Step 4: Use jwt.io set `exp": 9999999999` and `"sleep": "true"`
+
 JWT
 ```
 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYzMTI0NzQ3NywianRpIjoiMjI5Y2U5NzYtOTVlMC00ODdkLTlmODItNTMwZjU4NDkzNzQ3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImRldmlsIiwibmJmIjoxNjMxMjQ3NDc3LCJleHAiOjk5OTk5OTk5OTksInNsZWVwIjoidHJ1ZSIsImRhbmdlciI6InRydWUifQ.NTR8D5-tZJ-Ax6vc_tWtG4HU_JedT0840zZmvrQUSkj-qPQkjHf_lD7sbinnLySK-hUgSqhJa7B_tzR6jENryuFQ8WNwAHMP0RlsU6uJYHHnVOUSfbjsTuNdk7FwPjkm9M43R60hCqIP6NxJ5DY-HLVUql8GzfqbKX2MuCIFmVSL9tvQ4kG2GPlF_DUw
