@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="static/css/tsu.css">
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/socket.io.js"></script>
+<script src="static/js/tsu.js"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div class="header">
+    <a href="#default" class="logo">X-Service</a>
+    <div class="header-right">
+      <a class="active" href="#home">Hello {{name}}</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+
+<body>
+
+<br><br>
+<center>
+	<div class="form" >
+	    <label>XPATH</label><br>
+	    <input type="text" id="xpath" placeholder="Ex: attribute"><br>
+
+	    <label>XML</label>
+	    <textarea type="text" id="xml" rows="25" placeholder="Ex:&#10;<person>&#10;<name>tsu</name>&#10;<attribute>deptrai</attribute>&#10;</person>" ></textarea>
+	  
+	    <input type="submit" id="process" value="Process">
+	</div>
+</center>
