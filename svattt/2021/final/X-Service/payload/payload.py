@@ -47,4 +47,8 @@ def getFlag():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
 	getFlag()
+=======
+	getFlag()
+>>>>>>> 33f121ef7325fddac244e903ecfe92133d5f5131
