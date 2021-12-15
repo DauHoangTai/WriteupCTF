@@ -1,0 +1,1 @@
+Writeup here: https://dauhoangtai.github.io/ctf/2021/12/15/WRITEUP-IDEK-CTF-2021.html
